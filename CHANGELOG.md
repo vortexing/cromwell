@@ -2,6 +2,26 @@
 
 ## 38 Release Notes
 
+### HPC paths with Docker
+
+The `ConfigBackendLifecycleActorFactory` path variables `script`, `out` and `err` are now consistent when running with
+and without docker.
+
+Without Docker:
+- `script` - The path of the script to be run.
+- `out` - The path to the stdout.
+- `err` - The path to the stderr.
+
+With Docker:
+- `script` - The path outside the container of the script to be run.
+- `out` - The path outside the container to the stdout.
+- `err` - The path outside the container to the stderr.
+- `docker_script` - The path within the docker container of the `script`.
+- `docker_out` - The path within the docker container of the `out`.
+- `docker_err` - The path within the docker container of the `err`.
+
+Similarly, when killing a docker task the `kill-docker` configuration key is now used instead of `kill`.
+
 ### Bug fixes
 - Fixed an issue that could cause Cromwell to consume disk space unnecessarily when using zipped dependencies
 
