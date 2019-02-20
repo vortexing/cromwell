@@ -510,13 +510,6 @@ cromwell::private::setup_prior_version_resources() {
         | awk -F \" '{print $2}' \
         )"
 
-    parent_branch_name=$(git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//')
-    if [[ "$parent_branch_name" == *"hotfix"* ]]; then
-      prior_version="$current_version"
-    else
-      prior_version=$((current_version - 1))
-    fi
-
     CROMWELL_BUILD_CROMWELL_PRIOR_VERSION_JAR="${CROMWELL_BUILD_RESOURCES_DIRECTORY}/cromwell_${prior_version}.jar"
     export CROMWELL_BUILD_CROMWELL_PRIOR_VERSION_JAR
 
