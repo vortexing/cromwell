@@ -7,7 +7,7 @@ Check out the tutorial on [How to Configure Cromwell](tutorials/ConfigurationFil
 ### Configuration examples
 
 You can find a description of options and example stanzas in the [Cromwell Example Configuration][cromwell-examples-conf],
-along with backend provider examples in the [Example Providers Folder][cromwell-examples-folder].
+along with backend provider examples in the [Example Backend Configurations](https://github.com/broadinstitute/cromwell/tree/develop/cromwell.example.backends).
 
 ### Custom configuration files
 
